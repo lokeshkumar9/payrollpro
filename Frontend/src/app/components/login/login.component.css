@@ -1,0 +1,26 @@
+.card {
+    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+   
+  .card-header {
+    background-color: #77E4C8; /* Custom color for the header */
+    border-bottom: none; /* Optional: removes the default border */
+  }
+   
+  .form-group {
+    margin-bottom: 15px; /* Adjusted spacing between form elements */
+  }
+   
+  .btn-primary {
+    background-color: #478CCF; /* Button color */
+    border-color: #478CCF;
+    margin-top: 20px; /* Increased margin top for better spacing */
+    padding: 10px 20px; /* Padding adjustment for button */
+  }
+   
+  .btn-primary:hover {
+    background-color: #36C2CE; /* Darker shade on hover */
+    border-color: #36C2CE;
+  }
+   

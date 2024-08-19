@@ -1,0 +1,116 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Admin Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Employees</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Leaves</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Settings
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Notifications</a></li>
+              <li><a class="dropdown-item" href="#">Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+<h2 class="m-auto" style="padding-top: 20px; margin-left: 80px;">Edit Employee Data</h2>
+
+<div class="container mt-4">
+    <div *ngIf="successMessage" class="alert alert-primary" role="alert">
+        {{successMessage}}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-warning" role="alert">
+        {{errorMessage}}
+      </div>
+
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+        <div class="d-flex">
+            <div class="form-group flex-grow-1">
+                <label for="employeeId">Employee ID</label>
+                <input value={{employee.employeeId}} type="number" id="employeeId" class="form-control" formControlName="employeeId" />
+            </div>
+
+            <div class="form-group flex-grow-1">
+                <label for="firstName">First Name</label>
+                <input value={{employee.firstName}} type="text" id="firstName" class="form-control" formControlName="firstName" />
+            </div>
+
+            <div class="form-group flex-grow-1">
+                <label for="lastName">Last Name</label>
+                <input value={{employee.lastName}} type="text" id="lastName" class="form-control" formControlName="lastName" />
+            </div>
+        </div>
+
+        <div class="d-flex">
+            <div class="form-group flex-grow-1">
+                <label for="jobTitle">Job Title</label>
+                <input type="text" id="jobTitle" class="form-control" formControlName="jobTitle" />
+            </div>
+
+            <div class="form-group flex-grow-1">
+                <label for="managerId">Manager ID</label>
+                <input type="number" id="managerId" class="form-control" formControlName="managerId" />
+            </div>
+
+            <div class="form-group flex-grow-1">
+                <label for="department">department</label>
+                <input type="text" id="department" class="form-control" formControlName="department" />
+            </div>
+        </div>
+
+        <div class="d-flex ">
+            <div class="form-group flex-grow-1">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" formControlName="email" />
+            </div>
+
+            <div class="form-group flex-grow-1">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" class="form-control" formControlName="phoneNumber">
+              </div>
+
+              <div class="form-group flex-grow-1">
+                <label for="">Employee Roles</label>
+                  <mat-form-field  style="width: 100%;">
+                    <mat-label for="employeeRoles">Roles</mat-label>
+                    <mat-select id="employeeRoles" formControlName="employeeRoles" multiple>
+                      @for (role of roleList; track role) {
+                        <mat-option [value]="role">{{role}}</mat-option>
+                      }
+                    </mat-select>
+                  </mat-form-field>
+              </div>
+        </div>
+
+        <div class="thin-line-bottom"></div>
+
+        <button type="button" (click)="updateData()" style="margin-top: 30px; width: 150px;" class="btn  btn-primary">Update Employee</button>
+    </form>
+</div>

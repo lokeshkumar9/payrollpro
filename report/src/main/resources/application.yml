@@ -1,0 +1,95 @@
+
+spring:
+  application:
+    name: "report"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  profiles:
+    active: default
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: ''
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console:
+#      enabled: true
+api:
+  key: "6e106b8a460de653bf527cc6d7ed7fbd8e5d1eb70fb001c5d88373ff2daa1ef4"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      enabled: true
+endpoints:
+  shutdown:
+    enabled: true
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: "http://localhost:8070/eureka/"
+
+info:
+  app:
+    name: "report Microservice"
+    description: "report Microservice for Synergy bankl"
+    version: "1.0.0"
+
+
+#server:
+#  port: 8001
+#spring:
+#  application:
+#    name: "leave"
+#  profiles:
+#    active: "qa"
+#
+#  devtools:
+#    livereload:
+#      enabled: true
+#    restart:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:qadb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: ''
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console:
+#      enabled: true
+
+
+#server:
+#  port: 8001
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:qadb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: ''
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    ddl-auto: update
+#  h2:
+#    console:
+#      enabled: true

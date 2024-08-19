@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Admin Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Employees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Leaves</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Settings
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Notifications</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white">
+          <h3 class="mb-0">Create Employee</h3>
+        </div>
+        <div class="card-body">
+          <div *ngIf="successMessage" class="alert alert-success" role="alert">
+            {{successMessage}}
+          </div>
+          <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+            {{errorMessage}}
+          </div>
+
+          <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName" required>
+              </div>
+              <div class="col-md-4">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastName" required>
+              </div>
+              <div class="col-md-4">
+                <label for="jobTitle" class="form-label">Job Title</label>
+                <input type="text" class="form-control" id="jobTitle" formControlName="jobTitle" required>
+              </div>
+              <div class="col-md-4">
+                <label for="managerId" class="form-label">Manager ID</label>
+                <input type="number" class="form-control" id="managerId" formControlName="managerId">
+              </div>
+              <div class="col-md-4">
+                <label for="department" class="form-label">Department</label>
+                <input type="text" class="form-control" id="department" formControlName="department" required>
+              </div>
+              <div class="col-md-4">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" formControlName="email" required>
+              </div>
+              <div class="col-md-4">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phoneNumber" formControlName="phoneNumber" required>
+              </div>
+              <div class="col-md-8">
+                <label for="employeeRoles" class="form-label">Employee Roles</label>
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Roles</mat-label>
+                  <mat-select id="employeeRoles" formControlName="employeeRoles" multiple>
+                    @for (role of roleList; track role) {
+                      <mat-option [value]="role">{{role}}</mat-option>
+                    }
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+              <button type="button" class="btn btn-secondary me-md-2" >Reset</button>
+              <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">Create Employee</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

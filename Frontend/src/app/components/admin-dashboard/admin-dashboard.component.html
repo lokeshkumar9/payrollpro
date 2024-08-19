@@ -1,0 +1,99 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Admin Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Employees</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Leaves</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Settings
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="#">Notifications</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+          <h5 class="mb-0">Employee Management</h5>
+          <button type="button" (click)="goToCreateEmployee()" class="btn btn-light">
+            <i class="bi bi-plus-circle me-2"></i>Add New Employee
+          </button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th>Employee ID</th>
+                  <th>Name</th>
+                  <th>Job Title</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                  <th>Roles</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="employees.length === 0">
+                  <td colspan="7" class="text-center">No employees found</td>
+                </tr>
+                <tr *ngFor="let employee of employees">
+                  <td>{{employee.employeeId}}</td>
+                  <td>{{employee.firstName + ' ' + employee.lastName}}</td>
+                  <td>{{employee.jobTitle}}</td>
+                  <td>{{employee.phoneNumber}}</td>
+                  <td>{{employee.email}}</td>
+                  <td>
+                    <span *ngFor="let role of employee.employeeRoles" class="badge bg-secondary me-1">{{role}}</span>
+                  </td>
+                  <td>
+                    <button (click)="navigateToEditEmployee(employee.employeeId)" class="btn btn-sm btn-outline-primary me-2">
+                      <i class="bi bi-pencil-square"></i> Edit
+                    </button>
+                    <button class="btn btn-sm btn-outline-success">
+                      <i class="bi bi-cash-coin"></i> View Salary
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer mt-5 py-3 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-0">Total Employees: {{employees.length}}</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="mb-0">&copy; 2024 Admin Dashboard. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>

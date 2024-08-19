@@ -1,0 +1,109 @@
+<!-- <p>leave-request works!</p>
+
+
+<div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        Add Leave Request
+      </div>
+      <div class="card-body">
+
+        <form (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="employeeId" class="form-label">Employee ID</label>
+            <input type="number" id="employeeId" name="managerId" [(ngModel)]="leave.employeeId" class="form-control" aria-describedby="employeeIdHelp" required/>
+            <div id="employeeIdHelp" class="form-text">Enter your employee ID.</div>
+          </div>
+          <div class="mb-3">
+            <label for="managerId" class="form-label">Manager ID</label>
+            <input type="number" id="managerId" name="managerId" [(ngModel)]="leave.managerId" class="form-control" aria-describedby="managerIdHelp" required/>
+            <div id="managerIdHelp" class="form-text">Enter your manager ID.</div>
+          </div>
+          <div class="mb-3">
+            <label for="startDate" class="form-label">Start Date</label>
+            <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="leave.startDate" aria-describedby="startDateHelp" required>
+            <div id="startDateHelp" class="form-text">Enter the start date of your leave request.</div>
+          </div>
+          <div class="mb-3">
+            <label for="endDate" class="form-label">End Date</label>
+            <input type="date" class="form-control" id="endDate" name="endDate" [(ngModel)]="leave.endDate" aria-describedby="endDateHelp" required>
+            <div id="endDateHelp" class="form-text">Enter the end date of your leave request.</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div> -->
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Leave Request</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/leave-request']">leaveRequests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/approve-leave']">Leaves</a>
+          </li>
+  
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/manager-dashboard']">Profile</a>
+          </li>
+          
+        </ul>
+      </div>
+    </div>
+  </nav>  
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-lg border-0 rounded-lg">
+          <div class="card-header bg-gradient-primary text-white text-center py-3">
+            <h3 class="mb-0 fw-bold">Submit Leave Request</h3>
+          </div>
+          <div class="card-body bg-light p-5">
+            <form (ngSubmit)="onSubmit()">
+              <div class="mb-4">
+                <label for="employeeId" class="form-label fw-bold">Employee ID</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person-badge"></i></span>
+                  <input type="number" id="employeeId" name="employeeId" [(ngModel)]="leave.employeeId" class="form-control" placeholder="Enter your employee ID" required/>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="managerId" class="form-label fw-bold">Manager ID</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person-lines-fill"></i></span>
+                  <input type="number" id="managerId" name="managerId" [(ngModel)]="leave.managerId" class="form-control" placeholder="Enter your manager ID" required/>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="startDate" class="form-label fw-bold">Start Date</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
+                  <input type="date" class="form-control" id="startDate" name="startDate" [(ngModel)]="leave.startDate" required>
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="endDate" class="form-label fw-bold">End Date</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-calendar-event-fill"></i></span>
+                  <input type="date" class="form-control" id="endDate" name="endDate" [(ngModel)]="leave.endDate" required>
+                </div>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Submit Leave Request</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,104 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: "leave"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  profiles:
+    active: default
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+  cloud:
+    stream:
+      bindings:
+        sendCommunication-out-0:
+          destination: "send-communication"
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    connection-timeout: 10s
+#  datasource:
+#    url: jdbc:h2:mem:testdb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: ''
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console:
+#      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    shutdown:
+      enabled: true
+endpoints:
+  shutdown:
+    enabled: true
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: "http://localhost:8070/eureka/"
+
+info:
+  app:
+    name: "leave Microservice"
+    description: "leave Microservice for Synergy bankl"
+    version: "1.0.0"
+
+
+#server:
+#  port: 8001
+#spring:
+#  application:
+#    name: "leave"
+#  profiles:
+#    active: "qa"
+#
+#  devtools:
+#    livereload:
+#      enabled: true
+#    restart:
+#      enabled: true
+#  datasource:
+#    url: jdbc:h2:mem:qadb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: ''
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#  h2:
+#    console:
+#      enabled: true
+
+
+#server:
+#  port: 8001
+#spring:
+#  datasource:
+#    url: jdbc:h2:mem:qadb
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password: ''
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
+#    ddl-auto: update
+#  h2:
+#    console:
+#      enabled: true

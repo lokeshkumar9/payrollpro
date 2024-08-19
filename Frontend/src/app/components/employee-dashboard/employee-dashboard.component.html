@@ -1,0 +1,129 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Employee Dashboard</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/leave-request']">Leave Requests</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" [routerLink]="['/employee-dashboard']">Profile</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title mb-0">Employee Profile</h5>
+        </div>
+        <div class="card-body">
+          <div class="text-center mb-3">
+            <img src="https://via.placeholder.com/150" alt="Employee Photo" class="rounded-circle img-thumbnail">
+          </div>
+          <h4 class="text-center mb-3">John Doe</h4>
+          <p><strong>Employee ID:</strong> EMP001</p>
+          <p><strong>Department:</strong> IT</p>
+          <p><strong>Position:</strong> Software Developer</p>
+          <p><strong>Email:</strong> john.doecompany.com</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-8 mb-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title mb-0">Leave Dashboard</h5>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <div class="card bg-light">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Total Leaves</h5>
+                  <p class="card-text display-4">{{ leaveRequest?.totalLeaves }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card bg-light">
+                <div class="card-body text-center">
+                  <h5 class="card-title">Remaining Leaves</h5>
+                  <p class="card-text display-4">{{ leaveRequest?.remainingLeaves }}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 mb-3">
+              <div class="card bg-light">
+                <div class="card-body text-center">
+                  <h5 class="card-title">LWP</h5>
+                  <p class="card-text display-4">{{ leaveRequest?.lwp }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title mb-0">Salary Slip</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th>Component</th>
+                  <th class="text-end">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Basic Salary</td>
+                  <td class="text-end">₹ {{ salaryInfo?.baseSalary | number:'1.2-2' }}</td>
+                </tr>
+                <tr>
+                  <td>HRA</td>
+                  <td class="text-end">₹ {{ salaryInfo?.hra | number:'1.2-2' }}</td>
+                </tr>
+                <tr>
+                  <td>Benefits</td>
+                  <td class="text-end">₹ {{ salaryInfo?.benefits | number:'1.2-2' }}</td>
+                </tr>
+                
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer mt-5 py-3 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="mb-0">&copy; 2024 Employee Dashboard. All rights reserved.</p>
+      </div>
+      <div class="col-md-6 text-end">
+        <p class="mb-0">Version 1.0</p>
+      </div>
+    </div>
+  </div>
+</footer>

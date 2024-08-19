@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UKG Payroll Services Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('payroll-hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #0056b3;
+        }
+        .office-card {
+            transition: transform 0.3s;
+        }
+        .office-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="data:image/png;base64,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" alt="UKG Logo" height="30" class="d-inline-block align-top">
+            Payroll Services Portal
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-outline-light" href="#" [routerLink]="['/login']">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-4">Welcome to UKG Payroll Services</h1>
+        <p class="lead mb-5">Empowering businesses with innovative HR and workforce management solutions</p>
+        <a href="#" class="btn btn-primary btn-lg">Get Started</a>
+    </div>
+</header>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Services</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-calculator feature-icon mb-3"></i>
+                        <h5 class="card-title">Payroll Management</h5>
+                        <p class="card-text">Streamline your payroll process with our advanced solutions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-users feature-icon mb-3"></i>
+                        <h5 class="card-title">HR Management</h5>
+                        <p class="card-text">Comprehensive HR tools to manage your workforce effectively.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-chart-line feature-icon mb-3"></i>
+                        <h5 class="card-title">Workforce Analytics</h5>
+                        <p class="card-text">Gain insights with our powerful analytics and reporting tools.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">About UKG</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="data:image/jpeg;base64,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" alt="UKG Office" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6">
+                <p>UKG (Ultimate Kronos Group) is a leading American multinational technology company specializing in human resource and workforce management services. Our cloud-based HCM (human capital management) solutions help organizations anticipate and adapt to their employees' needs.</p>
+                <p>With a focus on innovation, UKG provides comprehensive services including HR, payroll, time management, and culture development. Our analytics tools empower leaders to make informed decisions, while our AI-backed insights help anticipate workforce needs.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Our Offices</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card office-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Noida Office</h5>
+                        <p class="card-text">
+                            <strong>Email:</strong> indiainfonoidaukg.com<br>
+                            <strong>Contact:</strong> 097177 79589<br>
+                            <strong>Address:</strong> Tower 4 B, Okaya Towers, 5, Sector 62, Noida, Uttar Pradesh 201301
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card office-card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Bangalore Office</h5>
+                        <p class="card-text">
+                            <strong>Email:</strong> indiainfobangaloreukg.com<br>
+                            <strong>Contact:</strong> 080 46809213<br>
+                            <strong>Address:</strong> Tridib Level 2, Unit 1 Bagmane Tech Park C V Raman Nagar Bangalore 560093
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>UKG Payroll Services Portal</h5>
+                <p>Empowering your workforce, one solution at a time.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <h5>Connect with us</h5>
+                <a href="#" class="text-light me-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-light me-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-light me-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-light"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            <p>&copy; 2024 UKG (Ultimate Kronos Group). All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

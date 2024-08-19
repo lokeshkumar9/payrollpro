@@ -1,0 +1,45 @@
+.bg-gradient-primary {
+    background: linear-gradient(to right, #4e73df, #224abe);
+  }
+  
+  .card {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .form-control:focus {
+    border-color: #4e73df;
+    box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
+  }
+  
+  .btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+  }
+  
+  .btn-primary:hover {
+    background-color: #224abe;
+    border-color: #224abe;
+  }
+  
+  .input-group-text {
+    background-color: #f8f9fc;
+    border-right: none;
+  }
+  
+  .form-control {
+    border-left: none;
+  }
+  
+  .input-group-text + .form-control {
+    border-left: 1px solid #ced4da;
+  }
+  
+  @media (max-width: 768px) {
+    .card-body {
+      padding: 2rem !important;
+    }
+  }
