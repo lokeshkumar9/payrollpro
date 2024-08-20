@@ -17,6 +17,7 @@ import { provideHttpClient, withFetch } from "@angular/common/http";
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { LeaveApproveComponent } from './components/leave-approve/leave-approve.component';
 import { LeaveRequestComponent } from './components/leave-request/leave-request.component';
+import { ServiceComponent } from './components/service/service.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { LeaveRequestComponent } from './components/leave-request/leave-request.
     AdminDashboardComponent,
     EmployeeDashboardComponent,
     HomeComponent,
+    ServiceComponent,
     LeaveApproveComponent,
     LeaveRequestComponent,
   ],

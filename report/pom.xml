@@ -133,7 +133,7 @@
 				<version>3.4.1</version>
 				<configuration>
 					<to>
-						<image>yatishgarg072/${project.artifactId}:2.0.0</image>
+						<image>lokeshkumarreport/${project.artifactId}:2.0.0</image>
 					</to>
 				</configuration>
 			</plugin>

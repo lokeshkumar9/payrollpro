@@ -9,6 +9,7 @@ import { CreateEmployeeComponent } from './components/create-employee/create-emp
 import { LeaveApproveComponent } from './components/leave-approve/leave-approve.component';
 import { LeaveRequestComponent } from './components/leave-request/leave-request.component';
 import { LoginComponent } from './components/login/login.component';
+import { ServiceComponent } from './components/service/service.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,12 @@ const routes: Routes = [
     component: ManagerDashboardComponent,
     pathMatch: 'full'
   },
+{
+  path: 'service',
+      component: ServiceComponent,
+      pathMatch: 'full'
+ },
+
   {
     path: 'employee-dashboard',
     component: EmployeeDashboardComponent,
